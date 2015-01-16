@@ -1,5 +1,5 @@
 $(document).ready(function() { // quando o jQuery estiver carregado...
-    PagarMe.encryption_key = "ek_test_Ec8KhxISQ1tug1b8bCGxC2nXfxqRmk";
+    PagarMe.encryption_key = "ek_test_gppkWuscJFkLyLDnkXfBY4a1JGqdPR";
 
     var form = $("#new_order");
 
@@ -7,7 +7,6 @@ $(document).ready(function() { // quando o jQuery estiver carregado...
         // inicializa um objeto de cartão de crédito e completa
         // com os dados do form
         var creditCard = new PagarMe.creditCard();
-        creditCard.cardHolderName = $("#new_order #card_holder_name").val();
         creditCard.cardExpirationMonth = $("#new_order #card_expiration_month").val();
         creditCard.cardExpirationYear = $("#new_order #card_expiration_year").val();
         creditCard.cardNumber = $("#new_order #card_number").val();
@@ -22,7 +21,7 @@ $(document).ready(function() { // quando o jQuery estiver carregado...
 
         if(hasErrors) {
             // realiza o tratamento de errors
-            alert(fieldErrors);
+            alert(response.error.message);
         } else {
             // se não há erros, gera o card_hash...
             creditCard.generateHash(function(cardHash) {

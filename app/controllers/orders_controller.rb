@@ -27,6 +27,19 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
 
+    require 'pagarme'
+
+  PagarMe.api_key = "ak_test_k1xUqziGwcR92y1AW74tZ6RNZG1wfl";
+
+  transaction = PagarMe::Transaction.new({
+    :price => 1000,
+    :card_hash => "{CARD_HASH}"
+})
+
+transaction.charge
+
+status = transaction.status
+
     respond_to do |format|
       if @order.save
         format.html { redirect_to root_url, notice: 'Order was successfully created.' }

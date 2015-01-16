@@ -42,11 +42,11 @@
     <div class="row">
       <div class="col-md-8">
         <%= label_tag :card_number, "Credit Card Number" %>
-        <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %>
+        <%= text_field_tag :card_number, nil, { :name => nil, :'id' => "number", class: "form-control" } %>
       </div>
       <div class="col-md-4">
         <%= label_tag :card_cvv, "CVC" %>
-        <%= text_field_tag :card_cvv, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %>
+        <%= text_field_tag :card_cvv, nil, { :name => nil, :'id' => "cvc", class: "form-control" } %>
       </div>
     </div>
   </div>
@@ -54,14 +54,11 @@
     <%= label_tag nil, "Expiration Date" %>
     <div class="row">
       <div class="col-md-3">
-        <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "card_expiration_month", class: "form-control" } %>
+        <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'id' => "card_expiration_month", class: "form-control" } %>
       </div>
       <div class="col-md-3">
-        <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "card_expiration_year", class: "form-control" } %>
- <div class="row">
-      <%= label_tag :card_holder_name, "NOME (como no cartao)" %>
-      <%= text_field_tag :card_holder_name %>
-  </div>
+        <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'id' => "card_expiration_year", class: "form-control" } %>
+
       </div>
     </div>
   </div>
