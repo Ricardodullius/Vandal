@@ -22,5 +22,8 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
+<%= link_to new_listing_path, class: "btn btn-success", data: { no_turbolink: true } do %>
+  <i class="glyphicon glyphicon-heart"></i> New Listing
+<% end %>
+
 <% end %>

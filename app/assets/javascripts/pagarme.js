@@ -11,6 +11,7 @@ $(document).ready(function() { // quando o jQuery estiver carregado...
         creditCard.cardExpirationYear = $("#new_order #card_expiration_year").val();
         creditCard.cardNumber = $("#new_order #card_number").val();
         creditCard.cardCVV = $("#new_order #card_cvv").val();
+        creditCard.cardHolderName = $("#new_order #card_holder_name").val();
 
         // pega os erros de validação nos campos do form
         var fieldErrors = creditCard.fieldErrors();
@@ -21,7 +22,7 @@ $(document).ready(function() { // quando o jQuery estiver carregado...
 
         if(hasErrors) {
             // realiza o tratamento de errors
-            alert(response.error.message);
+            alert(JSON.stringify(fieldErrors));
         } else {
             // se não há erros, gera o card_hash...
             creditCard.generateHash(function(cardHash) {
