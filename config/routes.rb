@@ -3,14 +3,6 @@ Rails.application.routes.draw do
 
  
 
-  get 'pages/nao-gostei'
-
-  get 'pages/termos'
-
-  get 'pages/qualidade'
-
-  get 'pages/faq'
-
   resources :categories
 
   devise_for :users
@@ -18,7 +10,11 @@ Rails.application.routes.draw do
   resources :listings do
   resources :orders, only: [:new, :create]
 end
+  
 
+  get 'pages/termos'
+  get 'pages/qualidade'
+  get 'pages/faq'
   get 'pages/querover'
   get 'pages/sobre'
   get 'pages/contato'

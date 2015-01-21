@@ -13,6 +13,7 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.5.7'
 gem 'devise'
 gem 'pagarme' 
+gem 'rb-readline'
 
 
 group :production do
