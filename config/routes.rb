@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
  
 
+  get 'pages/nao-gostei'
+
+  get 'pages/termos'
+
+  get 'pages/qualidade'
+
+  get 'pages/faq'
+
   resources :categories
 
   devise_for :users

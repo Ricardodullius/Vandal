@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 
   transaction = PagarMe::Transaction.new({
     :amount => (@listing.price * 100).floor,
-    :card_hash => "params[:card_hash]"
+    :card_hash => params[:card_hash]
 })
 
 
