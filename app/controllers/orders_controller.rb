@@ -32,10 +32,11 @@ class OrdersController < ApplicationController
   PagarMe.api_key = "ak_test_k1xUqziGwcR92y1AW74tZ6RNZG1wfl";
 
   transaction = PagarMe::Transaction.new({
-    :amount => (@listing.price * 100).floor,
-    :card_hash => params[:card_hash]
+      :amount => (@listing.price * 100).floor,
+      :card_hash => params[:card_hash]
 })
 
+transaction.charge
 
 status = transaction.status
 
